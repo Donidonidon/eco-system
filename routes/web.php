@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Pengkinian\Create;
 use App\Livewire\Pengkinian\Create as form;
+use App\Http\Livewire\Dummy;
+use App\Livewire\Dummy as LivewireDummy;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +18,12 @@ use App\Livewire\Pengkinian\Create as form;
 */
 
 Route::get('/', function () {
-    return view('welcome')->name('welcome');
-});
+    return view('welcome');
+})->name('welcome');
 
-Route::get('/form', form::class)->name('form');
+Route::get('/form', form::class);
+
+Route::get('/dummy', LivewireDummy::class);
 
 Route::middleware([
     'auth:sanctum',
