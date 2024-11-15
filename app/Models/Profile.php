@@ -10,7 +10,8 @@ class Profile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'user_id',
         'email',
         'nik',
@@ -19,10 +20,6 @@ class Profile extends Model
         'tanggal_lahir',
         'jenis_kelamin',
         'alamat',
-        'provinces_id',
-        'regencies_id',
-        'zip_code',
-        'country',
         'ijasah_terakhir',
         'jabatan_sekarang',
         'tanggal_masuk',

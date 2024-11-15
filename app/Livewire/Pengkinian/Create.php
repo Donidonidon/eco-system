@@ -14,6 +14,7 @@ class Create extends Component
     use WithFileUploads;
 
     #[Rule('required', message: 'Masukkan Nama Depan')]
+    #[Rule('min:5', message: 'minimal 5 karakter')]
     public $firstName;
 
     #[Rule('required', message: 'Masukkan Nama Belakang')]
