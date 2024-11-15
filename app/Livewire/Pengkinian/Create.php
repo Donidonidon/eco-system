@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Pengkinian;
 
+use App\Actions\Fortify\CreateNewUser;
 use App\Models\Profile;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Rule;
@@ -12,6 +13,8 @@ use Livewire\Attributes\Rule;
 class Create extends Component
 {
     use WithFileUploads;
+
+    // public $user_id;
 
     #[Rule('required', message: 'Masukkan Nama Depan')]
     #[Rule('min:5', message: 'minimal 5 karakter')]
@@ -60,20 +63,23 @@ class Create extends Component
         $this->validate();
 
         //store image in storage/app/public/posts
-        $this->image->storeAs('public/ktp', $this->image->hashName());
-
-        $userID = User::create([
-            'name' => $this->firstName,
-            'email' => $this->email,
-            'password' => bcrypt('12345678'),
-        ]);
+        $this->fotoKtp->storeAs('public/ktp', $this->fotoKtp->hashName());
 
         // Gabungkan nama depan dan belakang untuk kolom 'name'
-        $fullName = trim($this->firstName . ' ' . $this->lastName);
+        // $fullName = trim($this->firstName . ' ' . $this->lastName);
+
+        $user = User::create([
+            'name' => $this->firstName,
+            'email' => $this->email,
+            'password' => Hash::make($this->nik),
+        ]);
+
+        // dd($userID);
 
         Profile::create([
-            'user_id' => $userID->id,
-            'name' => $fullName,
+            'user_id' => $user->id,
+            'first_name' => $this->firstName,
+            'last_name' => $this->lastName,
             'email' => $this->email,
             'nik' => $this->nik,
             'no_hp' => $this->noHp,
@@ -84,7 +90,7 @@ class Create extends Component
             'ijasah_terakhir' => $this->ijasahTerakhir,
             'jabatan_sekarang' => $this->jabatanSekarang,
             'tanggal_masuk' => $this->tanggalMasuk,
-            'foto_ktp' => $this->image->hashName(),
+            'foto_ktp' => $this->fotoKtp->hashName(),
         ]);
 
         session()->flash('success', 'Data Berhasil Ditambahkan');
