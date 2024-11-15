@@ -1,5 +1,8 @@
-<div class="bg-white">
+@section('title')
+    Pengkinian Data Karyawan BPR Putera Dana
+@endsection
 
+<div class="bg-white">
     <div class="relative isolate px-6 pt-14 lg:px-8">
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true">
@@ -7,7 +10,7 @@
                 style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
             </div>
         </div>
-        <div class="mx-auto max-w-2xl">
+        <div class="mx-auto max-w-2xl pb-10">
             <form class="mt-10" wire:submit.prevent="store" enctype="multipart/form-data">
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
@@ -18,81 +21,105 @@
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             {{-- first name --}}
                             <div class="sm:col-span-3">
-                                <label for="firstName" class="block text-sm/6 font-medium text-gray-900">First
+                                <label for="firstName" class="text-sm/6 font-medium text-gray-900">First
                                     Name</label>
+                                @error('firstName')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="firstName" type="text" id="firstName"
+                                    <input wire:model.live="firstName" type="text" id="firstName"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- last name --}}
                             <div class="sm:col-span-3">
-                                <label for="lastName" class="block text-sm/6 font-medium text-gray-900">Last
+                                <label for="lastName" class=" text-sm/6 font-medium text-gray-900">Last
                                     Name</label>
+                                @error('lastName')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="lastName" type="text" id="lastName"
+                                    <input wire:model.live="lastName" type="text" id="lastName"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- nik --}}
                             <div class="col-span-full">
-                                <label for="nik" class="block text-sm/6 font-medium text-gray-900">NIK</label>
+                                <label for="nik" class=" text-sm/6 font-medium text-gray-900">NIK</label>
+                                @error('nik')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="nik" type="number" id="nik"
+                                    <input wire:model.live="nik" type="number" id="nik"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- email --}}
                             <div class="sm:col-span-3">
-                                <label for="email" class="block text-sm/6 font-medium text-gray-900">Email
+                                <label for="email" class=" text-sm/6 font-medium text-gray-900">Email
                                 </label>
+                                @error('email')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="email" id="email" type="email" autocomplete="email"
+                                    <input wire:model.live="email" id="email" type="email" autocomplete="email"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- no hp --}}
                             <div class="sm:col-span-3">
-                                <label for="noHp" class="block text-sm/6 font-medium text-gray-900">No Hp
+                                <label for="noHp" class=" text-sm/6 font-medium text-gray-900">No Hp
                                 </label>
+                                @error('noHp')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="noHp" type="number" id="noHp"
+                                    <input wire:model.live="noHp" type="number" id="noHp"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- tempat lahir --}}
                             <div class="sm:col-span-3">
-                                <label for="tempatLahir" class="block text-sm/6 font-medium text-gray-900">Tempat
+                                <label for="tempatLahir" class=" text-sm/6 font-medium text-gray-900">Tempat
                                     Lahir
                                 </label>
+                                @error('tempatLahir')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="tempatLahir" type="text" id="tempatLahir"
+                                    <input wire:model.live="tempatLahir" type="text" id="tempatLahir"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- tanggal lahir --}}
                             <div class="sm:col-span-3">
-                                <label for="tanggalLahir" class="block text-sm/6 font-medium text-gray-900">Tanggal
+                                <label for="tanggalLahir" class=" text-sm/6 font-medium text-gray-900">Tanggal
                                     Lahir
                                 </label>
+                                @error('tanggalLahir')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="tanggalLahir" type="date" id="tanggalLahir"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                                    <input wire:model.live="tanggalLahir" type="date" id="tanggalLahir"
+                                        class="block w-full bg-slate-100 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- jenis kelamin --}}
                             <div class="sm:col-span-3">
-                                <label for="jenisKelamin" class="block text-sm/6 font-medium text-gray-900">Jenis
+                                <label for="jenisKelamin" class=" text-sm/6 font-medium text-gray-900">Jenis
                                     Kelamin</label>
+                                @error('jenisKelamin')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <select wire:model="jenisKelamin" id="jenisKelamin"
+                                    <select wire:model.live="jenisKelamin" id="jenisKelamin"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm/6">
                                         <option value="male">Laki-Laki</option>
                                         <option value="female">Perempuan</option>
@@ -102,19 +129,25 @@
 
                             {{-- alamat --}}
                             <div class="col-span-full">
-                                <label for="alamat" class="block text-sm/6 font-medium text-gray-900">Alamat</label>
+                                <label for="alamat" class=" text-sm/6 font-medium text-gray-900">Alamat</label>
+                                @error('alamat')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="alamat" type="text" id="alamat"
+                                    <input wire:model.live="alamat" type="text" id="alamat"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- ijasah --}}
                             <div class="sm:col-span-3">
-                                <label for="ijasahTerakhir" class="block text-sm/6 font-medium text-gray-900">Ijasah
+                                <label for="ijasahTerakhir" class=" text-sm/6 font-medium text-gray-900">Ijasah
                                     Terkahir</label>
+                                @error('ijasahTerakhir')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <select wire:model="ijasahTerakhir" id="ijasahTerakhir"
+                                    <select wire:model.live="ijasahTerakhir" id="ijasahTerakhir"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm/6">
                                         <option value="smp">SMP</option>
                                         <option value="sma">SMA</option>
@@ -125,10 +158,13 @@
 
                             {{-- jabatan --}}
                             <div class="sm:col-span-3">
-                                <label for="jabatanSekarang" class="block text-sm/6 font-medium text-gray-900">Jabatan
+                                <label for="jabatanSekarang" class=" text-sm/6 font-medium text-gray-900">Jabatan
                                     Sekarang</label>
+                                @error('jabatanSekarang')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <select wire:model="jabatanSekarang" id="jabatanSekarang"
+                                    <select wire:model.live="jabatanSekarang" id="jabatanSekarang"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm/6">
                                         <option value="karyawan">Karyawan</option>
                                         <option value="direksi">Direksi</option>
@@ -138,19 +174,25 @@
 
                             {{-- tanggal Masuk --}}
                             <div class="sm:col-span-3">
-                                <label for="tanggalMasuk" class="block text-sm/6 font-medium text-gray-900">Tanggal
+                                <label for="tanggalMasuk" class=" text-sm/6 font-medium text-gray-900">Tanggal
                                     Masuk
                                 </label>
+                                @error('tanggalMasuk')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-2">
-                                    <input wire:model="tanggalMasuk" type="date" id="tanggalMasuk"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                                    <input wire:model.live="tanggalMasuk" type="date" id="tanggalMasuk"
+                                        class="block w-full bg-slate-100 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                                 </div>
                             </div>
 
                             {{-- foto --}}
                             <div class="col-span-full">
-                                <label for="fotoKtp" class="block text-sm/6 font-medium text-gray-900">Foto
+                                <label for="fotoKtp" class=" text-sm/6 font-medium text-gray-900">Foto
                                     KTP</label>
+                                @error('fotoKtp')
+                                    <span class="ml-1 text-red-500 text-sm font-bold">{{ $message }}</span>
+                                @enderror
                                 <div
                                     class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                                     <div class="text-center">
@@ -165,7 +207,7 @@
                                                 <label for="foto_ktp"
                                                     class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                                                     <span class="align-middle">Upload a new file</span>
-                                                    <input wire:model="fotoKtp" id="fotoKtp" type="file"
+                                                    <input wire:model.live="fotoKtp" id="fotoKtp" type="file"
                                                         class="sr-only">
                                                 </label>
                                             </div>
@@ -182,7 +224,7 @@
                                                 <label for="fotoKtp"
                                                     class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600">
                                                     <span>Upload a file</span>
-                                                    <input wire:model="fotoKtp" id="fotoKtp" type="file"
+                                                    <input wire:model.live="fotoKtp" id="fotoKtp" type="file"
                                                         class="sr-only">
 
 
@@ -212,11 +254,11 @@
             </form>
 
         </div>
-        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        {{-- <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
             aria-hidden="true">
             <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
                 style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

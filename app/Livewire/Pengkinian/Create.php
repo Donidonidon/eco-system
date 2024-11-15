@@ -16,46 +16,47 @@ class Create extends Component
 
     // public $user_id;
 
-    #[Rule('required', message: 'Masukkan Nama Depan')]
-    #[Rule('min:5', message: 'minimal 5 karakter')]
+    #[Rule('required', message: 'Masukkan Nama Depan!')]
+    #[Rule('min:5', message: 'Minimal 5 karakter!')]
     public $firstName;
 
-    #[Rule('required', message: 'Masukkan Nama Belakang')]
+    #[Rule('required', message: 'Masukkan Nama Belakang!')]
     public $lastName;
 
-    #[Rule('required', message: 'Masukkan Email')]
+    #[Rule('required', message: 'Masukkan Email!')]
+    #[Rule('email', message: 'Masukkan Email yang benar!')]
     public $email;
 
-    #[Rule('required', message: 'Masukkan NIK')]
+    #[Rule('required', message: 'Masukkan NIK!')]
     public $nik;
 
-    #[Rule('required', message: 'Masukkan No HP')]
+    #[Rule('required', message: 'Masukkan No HP!')]
     public $noHp;
 
-    #[Rule('required', message: 'Masukkan Tempat Lahir')]
+    #[Rule('required', message: 'Masukkan Tempat Lahir!')]
     public $tempatLahir;
 
-    #[Rule('required', message: 'Masukkan Tanggal Lahir')]
+    #[Rule('required', message: 'Masukkan Tanggal Lahir!')]
     public $tanggalLahir;
 
-    #[Rule('required', message: 'Masukkan Jenis Kelamin')]
+    #[Rule('required', message: 'Masukkan Jenis Kelamin!')]
     public $jenisKelamin;
 
-    #[Rule('required', message: 'Masukkan Alamat')]
+    #[Rule('required', message: 'Masukkan Alamat!')]
     public $alamat;
 
-    #[Rule('required', message: 'Masukkan Ijasah Terakhir')]
+    #[Rule('required', message: 'Masukkan Ijasah Terakhir!')]
     public $ijasahTerakhir;
 
-    #[Rule('required', message: 'Masukkan Jabatan Sekarang')]
+    #[Rule('required', message: 'Masukkan Jabatan Sekarang!')]
     public $jabatanSekarang;
 
-    #[Rule('required', message: 'Masukkan Tanggal Masuk')]
+    #[Rule('required', message: 'Masukkan Tanggal Masuk!')]
     public $tanggalMasuk;
 
-    #[Rule('required', message: 'Masukkan Gambar Post')]
-    #[Rule('image', message: 'File Harus Gambar')]
-    #[Rule('max:5120', message: 'Ukuran File Maksimal 1MB')]
+    #[Rule('required', message: 'Masukkan Gambar Post!')]
+    #[Rule('image', message: 'File Harus Gambar!')]
+    #[Rule('max:5120', message: 'Ukuran File Maksimal 1MB!')]
     public $fotoKtp;
 
     public function store()
