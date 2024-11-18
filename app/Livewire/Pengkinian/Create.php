@@ -109,20 +109,20 @@ class Create extends Component
         $this->selectedVillage = null;
     }
 
-    // public function updatedNik($value)
-    // {
-    //     // Hilangkan tanda hubung yang sudah ada untuk menghindari duplikasi
-    //     $value = str_replace('-', '', $value);
+    public function updatedNik($value)
+    {
+        // Hilangkan tanda hubung yang sudah ada untuk menghindari duplikasi
+        $value = str_replace('-', '', $value);
 
-    //     // Sisipkan tanda hubung setiap 4 karakter
-    //     $formattedNik = substr($value, 0, 4); // Ambil 4 karakter pertama
-    //     for ($i = 4; $i < strlen($value); $i += 4) {
-    //         $formattedNik .= '-' . substr($value, $i, 4);
-    //     }
+        // Sisipkan tanda hubung setiap 4 karakter
+        $formattedNik = substr($value, 0, 4); // Ambil 4 karakter pertama
+        for ($i = 4; $i < strlen($value); $i += 4) {
+            $formattedNik .= '-' . substr($value, $i, 4);
+        }
 
-    //     // Simpan hasil format kembali ke properti NIK
-    //     $this->nik = $formattedNik;
-    // }
+        // Simpan hasil format kembali ke properti NIK
+        $this->nik = $formattedNik;
+    }
 
 
     public function store()
