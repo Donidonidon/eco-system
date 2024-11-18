@@ -22,10 +22,17 @@ return new class extends Migration
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->string('jenis_kelamin');
+            $table->string('agama');
+
             $table->string('alamat');
+            $table->integer('provinces_id');
+            $table->integer('regencies_id');
+            $table->integer('districts_id');
+
             $table->string('ijasah_terakhir');
-            $table->string('jabatan_sekarang');
+            $table->integer('jabatan_sekarang');
             $table->date('tanggal_masuk');
+            $table->integer('kantor');
             $table->string('foto_ktp');
             $table->timestamps();
         });

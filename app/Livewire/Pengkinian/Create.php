@@ -2,22 +2,25 @@
 
 namespace App\Livewire\Pengkinian;
 
-use App\Actions\Fortify\CreateNewUser;
-use App\Models\Profile;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Kantor;
+use App\Models\Jabatan;
+use App\Models\Profile;
+use App\Models\Regency;
+use App\Models\Village;
 use Livewire\Component;
-use Livewire\WithFileUploads;
+use App\Models\District;
+use App\Models\Province;
 use Livewire\Attributes\Rule;
+use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Hash;
+use App\Actions\Fortify\CreateNewUser;
 
 class Create extends Component
 {
     use WithFileUploads;
 
-    // public $user_id;
-
     #[Rule('required', message: 'Masukkan Nama Depan!')]
-    #[Rule('min:5', message: 'Minimal 5 karakter!')]
     public $firstName;
 
     #[Rule('required', message: 'Masukkan Nama Belakang!')]
@@ -28,6 +31,7 @@ class Create extends Component
     public $email;
 
     #[Rule('required', message: 'Masukkan NIK!')]
+    #[Rule('max:19', message: 'Minimal 16 karakter!')]
     public $nik;
 
     #[Rule('required', message: 'Masukkan No HP!')]
@@ -42,6 +46,9 @@ class Create extends Component
     #[Rule('required', message: 'Masukkan Jenis Kelamin!')]
     public $jenisKelamin;
 
+    #[Rule('required', message: 'Pilih Agama Anda!')]
+    public $agama;
+
     #[Rule('required', message: 'Masukkan Alamat!')]
     public $alamat;
 
@@ -50,14 +57,73 @@ class Create extends Component
 
     #[Rule('required', message: 'Masukkan Jabatan Sekarang!')]
     public $jabatanSekarang;
+    public $jabatanId;
 
     #[Rule('required', message: 'Masukkan Tanggal Masuk!')]
     public $tanggalMasuk;
 
+    #[Rule('required', message: 'Mohon Masukkan Nama Kantor!')]
+    public $kantor;
+    public $kantorId;
+
     #[Rule('required', message: 'Masukkan Gambar Post!')]
     #[Rule('image', message: 'File Harus Gambar!')]
-    #[Rule('max:5120', message: 'Ukuran File Maksimal 1MB!')]
+    #[Rule('max:5120', message: 'Ukuran File Maksimal 5MB!')]
     public $fotoKtp;
+
+    public $provinces = [];
+    public $regencies = [];
+    public $districts = [];
+    public $villages = [];
+
+    public $selectedProvince = null;
+    public $selectedRegency = null;
+    public $selectedDistrict = null;
+    public $selectedVillage = null;
+
+    public function mount()
+    {
+        $this->provinces = Province::all(); // Ambil data provinsi
+        $this->jabatanSekarang = Jabatan::all();
+        $this->kantor = Kantor::all();
+    }
+
+    public function updatedSelectedProvince($value)
+    {
+        $this->regencies = Regency::where('province_id', $value)->get();
+        $this->selectedRegency = null;
+        $this->districts = [];
+        $this->villages = [];
+    }
+
+    public function updatedSelectedRegency($value)
+    {
+        $this->districts = District::where('regency_id', $value)->get();
+        $this->selectedDistrict = null;
+        $this->villages = [];
+    }
+
+    public function updatedSelectedDistrict($value)
+    {
+        $this->villages = Village::where('district_id', $value)->get();
+        $this->selectedVillage = null;
+    }
+
+    // public function updatedNik($value)
+    // {
+    //     // Hilangkan tanda hubung yang sudah ada untuk menghindari duplikasi
+    //     $value = str_replace('-', '', $value);
+
+    //     // Sisipkan tanda hubung setiap 4 karakter
+    //     $formattedNik = substr($value, 0, 4); // Ambil 4 karakter pertama
+    //     for ($i = 4; $i < strlen($value); $i += 4) {
+    //         $formattedNik .= '-' . substr($value, $i, 4);
+    //     }
+
+    //     // Simpan hasil format kembali ke properti NIK
+    //     $this->nik = $formattedNik;
+    // }
+
 
     public function store()
     {
@@ -66,16 +132,11 @@ class Create extends Component
         //store image in storage/app/public/posts
         $this->fotoKtp->storeAs('public/ktp', $this->fotoKtp->hashName());
 
-        // Gabungkan nama depan dan belakang untuk kolom 'name'
-        // $fullName = trim($this->firstName . ' ' . $this->lastName);
-
         $user = User::create([
             'name' => $this->firstName,
             'email' => $this->email,
-            'password' => Hash::make($this->nik),
+            'password' => Hash::make($this->firstName),
         ]);
-
-        // dd($userID);
 
         Profile::create([
             'user_id' => $user->id,
@@ -87,10 +148,17 @@ class Create extends Component
             'tempat_lahir' => $this->tempatLahir,
             'tanggal_lahir' => $this->tanggalLahir,
             'jenis_kelamin' => $this->jenisKelamin,
+            'agama' => $this->agama,
+
             'alamat' => $this->alamat,
+            'provinces_id' => $this->selectedProvince,
+            'regencies_id' => $this->selectedRegency,
+            'districts_id' => $this->selectedDistrict,
+
             'ijasah_terakhir' => $this->ijasahTerakhir,
-            'jabatan_sekarang' => $this->jabatanSekarang,
+            'jabatan_sekarang' => $this->jabatanId,
             'tanggal_masuk' => $this->tanggalMasuk,
+            'kantor' => $this->kantorId,
             'foto_ktp' => $this->fotoKtp->hashName(),
         ]);
 
