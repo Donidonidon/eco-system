@@ -882,6 +882,10 @@ body {
   margin-right: 1.5rem;
 }
 
+.mr-18{
+    margin-right: 4.5rem;
+}
+
 .mt-0{
   margin-top: 0px;
 }
@@ -1312,6 +1316,45 @@ body {
   border-top-right-radius: 0.75rem;
 }
 
+.img-pengaduan{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.text-pengaduan{
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.rounded-pengaduan{
+    background-color: #189d0e;
+    color: #fff;
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+    box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+@media (max-width: 540px){
+    .text-pengaduan{
+        font-size: 0.75rem;
+        line-height: 0.5rem;
+    }
+
+    .img-pengaduan{
+        width: 0.6rem;
+        height: 0.6rem;
+        margin-bottom: 5px;
+    }
+
+    .rounded-pengaduan{
+        box-shadow: 2px 2px 2px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+
+}
+
 .border{
   border-width: 1px;
 }
@@ -1330,6 +1373,12 @@ body {
 
 .border-t{
   border-top-width: 1px;
+}
+
+.border-cta{
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-color: #ff2b00;
 }
 
 .border-\[\#8890A4\]{
@@ -3164,3 +3213,81 @@ body {
   @keyframes squares {
     from { transform: translateY(100%) rotate(-50deg) }
     to   { transform: translateY(calc(-100vh + -100%)) rotate(20deg) }}
+
+    @import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:200px;
+  margin-top: auto;
+  /* margin-top: -140px; */
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% {
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+
+  .ml4 .letters {
+    font-size: 0.5em;
+  }
+}
+
+.content {
+    position:relative;
+    height:20vh;
+    text-align:center;
+    background-color: white;
+    /* margin-top: 200px; */
+  }
+
+  .ml4 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3em;
+  }
+  .ml4 .letters {
+    max-width: fit-content;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    /* top: 0.3em; */
+    right: 0;
+    opacity: 0;
+  }

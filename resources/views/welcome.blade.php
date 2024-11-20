@@ -47,7 +47,7 @@
         <div class="container">
             <div class="relative -mx-4 flex items-center justify-between">
                 <div class="w-100 max-w-full px-4">
-                    <a href="index.html" class="navbar-logo block w-full py-5">
+                    <a href="{{ route('welcome') }}" class="navbar-logo block w-full py-5">
                         <img src="{{ asset('assets/images/logo/logo-pd-putih.svg') }}" alt="logo"
                             class="header-logo w-full" />
                     </a>
@@ -75,12 +75,33 @@
                                         About
                                     </a>
                                 </li>
-                                <li class="group relative">
-                                    <a href="#pricing"
-                                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10">
-                                        Pricing
+                                <li class="submenu-item group relative">
+                                    <a href="#produk"
+                                        class="relative mx-8 flex items-center justify-between py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-8 lg:mr-0 lg:inline-flex lg:py-6 lg:pl-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10">
+                                        Produk
+                                        <svg class="ml-2 fill-current" width="16" height="20" viewBox="0 0 16 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.99999 14.9C7.84999 14.9 7.72499 14.85 7.59999 14.75L1.84999 9.10005C1.62499 8.87505 1.62499 8.52505 1.84999 8.30005C2.07499 8.07505 2.42499 8.07505 2.64999 8.30005L7.99999 13.525L13.35 8.25005C13.575 8.02505 13.925 8.02505 14.15 8.25005C14.375 8.47505 14.375 8.82505 14.15 9.05005L8.39999 14.7C8.27499 14.825 8.14999 14.9 7.99999 14.9Z" />
+                                        </svg>
                                     </a>
+                                    <div
+                                        class="submenu relative left-0 top-full hidden w-[250px] rounded-sm bg-white p-4 transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark-2 lg:invisible lg:absolute lg:top-[110%] lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full">
+                                        <a href="about.html"
+                                            class="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary">
+                                            Tabungan PD
+                                        </a>
+                                        <a href="pricing.html"
+                                            class="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary">
+                                            Kredit
+                                        </a>
+                                        <a href="contact.html"
+                                            class="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary">
+                                            Deposito
+                                        </a>
+                                    </div>
                                 </li>
+
                                 <li class="group relative">
                                     <a href="#team"
                                         class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10">
@@ -88,15 +109,15 @@
                                     </a>
                                 </li>
                                 <li class="group relative">
-                                    <a href="#contact"
+                                    <a href="#blog"
                                         class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10">
-                                        Contact
+                                        Blog
                                     </a>
                                 </li>
                                 <li class="group relative">
-                                    <a href="blog-grids.html"
+                                    <a href="#contact"
                                         class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10">
-                                        Blog
+                                        Contact
                                     </a>
                                 </li>
                                 <li class="submenu-item group relative">
@@ -228,361 +249,20 @@
     <!-- ====== Navbar Section End -->
 
     <!-- ====== Hero Section Start -->
-    <div id="home" class="h-screen relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]">
-        <div class="container">
-            <div class="-mx-4 flex justify-between items-center mt-16">
-                {{-- Hero Image --}}
-                <div class="w-1/2 px-4 bottom-0">
-                    <div class="wow fadeInUp relative z-10 mx-auto max-w-[845px]" data-wow-delay=".25s">
-                        <div class="mt-16">
-                            <img src="assets/images/hero/HERO.png" alt="hero"
-                                class="mx-auto max-w-full rounded-t-xl rounded-tr-xl" />
-                        </div>
-                        <div class="absolute -left-9 bottom-0 z-[-1]">
-                            <svg width="134" height="106" viewBox="0 0 134 106" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="1.66667" cy="104" r="1.66667" transform="rotate(-90 1.66667 104)"
-                                    fill="white" />
-                                <circle cx="16.3333" cy="104" r="1.66667" transform="rotate(-90 16.3333 104)"
-                                    fill="white" />
-                                <circle cx="31" cy="104" r="1.66667" transform="rotate(-90 31 104)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="104" r="1.66667" transform="rotate(-90 45.6667 104)"
-                                    fill="white" />
-                                <circle cx="60.3333" cy="104" r="1.66667" transform="rotate(-90 60.3333 104)"
-                                    fill="white" />
-                                <circle cx="88.6667" cy="104" r="1.66667" transform="rotate(-90 88.6667 104)"
-                                    fill="white" />
-                                <circle cx="117.667" cy="104" r="1.66667" transform="rotate(-90 117.667 104)"
-                                    fill="white" />
-                                <circle cx="74.6667" cy="104" r="1.66667" transform="rotate(-90 74.6667 104)"
-                                    fill="white" />
-                                <circle cx="103" cy="104" r="1.66667" transform="rotate(-90 103 104)"
-                                    fill="white" />
-                                <circle cx="132" cy="104" r="1.66667" transform="rotate(-90 132 104)"
-                                    fill="white" />
-                                <circle cx="1.66667" cy="89.3333" r="1.66667"
-                                    transform="rotate(-90 1.66667 89.3333)" fill="white" />
-                                <circle cx="16.3333" cy="89.3333" r="1.66667"
-                                    transform="rotate(-90 16.3333 89.3333)" fill="white" />
-                                <circle cx="31" cy="89.3333" r="1.66667" transform="rotate(-90 31 89.3333)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="89.3333" r="1.66667"
-                                    transform="rotate(-90 45.6667 89.3333)" fill="white" />
-                                <circle cx="60.3333" cy="89.3338" r="1.66667"
-                                    transform="rotate(-90 60.3333 89.3338)" fill="white" />
-                                <circle cx="88.6667" cy="89.3338" r="1.66667"
-                                    transform="rotate(-90 88.6667 89.3338)" fill="white" />
-                                <circle cx="117.667" cy="89.3338" r="1.66667"
-                                    transform="rotate(-90 117.667 89.3338)" fill="white" />
-                                <circle cx="74.6667" cy="89.3338" r="1.66667"
-                                    transform="rotate(-90 74.6667 89.3338)" fill="white" />
-                                <circle cx="103" cy="89.3338" r="1.66667" transform="rotate(-90 103 89.3338)"
-                                    fill="white" />
-                                <circle cx="132" cy="89.3338" r="1.66667" transform="rotate(-90 132 89.3338)"
-                                    fill="white" />
-                                <circle cx="1.66667" cy="74.6673" r="1.66667"
-                                    transform="rotate(-90 1.66667 74.6673)" fill="white" />
-                                <circle cx="1.66667" cy="31.0003" r="1.66667"
-                                    transform="rotate(-90 1.66667 31.0003)" fill="white" />
-                                <circle cx="16.3333" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 16.3333 74.6668)" fill="white" />
-                                <circle cx="16.3333" cy="31.0003" r="1.66667"
-                                    transform="rotate(-90 16.3333 31.0003)" fill="white" />
-                                <circle cx="31" cy="74.6668" r="1.66667" transform="rotate(-90 31 74.6668)"
-                                    fill="white" />
-                                <circle cx="31" cy="31.0003" r="1.66667" transform="rotate(-90 31 31.0003)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 45.6667 74.6668)" fill="white" />
-                                <circle cx="45.6667" cy="31.0003" r="1.66667"
-                                    transform="rotate(-90 45.6667 31.0003)" fill="white" />
-                                <circle cx="60.3333" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 60.3333 74.6668)" fill="white" />
-                                <circle cx="60.3333" cy="31.0001" r="1.66667"
-                                    transform="rotate(-90 60.3333 31.0001)" fill="white" />
-                                <circle cx="88.6667" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 88.6667 74.6668)" fill="white" />
-                                <circle cx="88.6667" cy="31.0001" r="1.66667"
-                                    transform="rotate(-90 88.6667 31.0001)" fill="white" />
-                                <circle cx="117.667" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 117.667 74.6668)" fill="white" />
-                                <circle cx="117.667" cy="31.0001" r="1.66667"
-                                    transform="rotate(-90 117.667 31.0001)" fill="white" />
-                                <circle cx="74.6667" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 74.6667 74.6668)" fill="white" />
-                                <circle cx="74.6667" cy="31.0001" r="1.66667"
-                                    transform="rotate(-90 74.6667 31.0001)" fill="white" />
-                                <circle cx="103" cy="74.6668" r="1.66667" transform="rotate(-90 103 74.6668)"
-                                    fill="white" />
-                                <circle cx="103" cy="31.0001" r="1.66667" transform="rotate(-90 103 31.0001)"
-                                    fill="white" />
-                                <circle cx="132" cy="74.6668" r="1.66667" transform="rotate(-90 132 74.6668)"
-                                    fill="white" />
-                                <circle cx="132" cy="31.0001" r="1.66667" transform="rotate(-90 132 31.0001)"
-                                    fill="white" />
-                                <circle cx="1.66667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 1.66667 60.0003)" fill="white" />
-                                <circle cx="1.66667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 1.66667 16.3336)" fill="white" />
-                                <circle cx="16.3333" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 16.3333 60.0003)" fill="white" />
-                                <circle cx="16.3333" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 16.3333 16.3336)" fill="white" />
-                                <circle cx="31" cy="60.0003" r="1.66667" transform="rotate(-90 31 60.0003)"
-                                    fill="white" />
-                                <circle cx="31" cy="16.3336" r="1.66667" transform="rotate(-90 31 16.3336)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 45.6667 60.0003)" fill="white" />
-                                <circle cx="45.6667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 45.6667 16.3336)" fill="white" />
-                                <circle cx="60.3333" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 60.3333 60.0003)" fill="white" />
-                                <circle cx="60.3333" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 60.3333 16.3336)" fill="white" />
-                                <circle cx="88.6667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 88.6667 60.0003)" fill="white" />
-                                <circle cx="88.6667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 88.6667 16.3336)" fill="white" />
-                                <circle cx="117.667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 117.667 60.0003)" fill="white" />
-                                <circle cx="117.667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 117.667 16.3336)" fill="white" />
-                                <circle cx="74.6667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 74.6667 60.0003)" fill="white" />
-                                <circle cx="74.6667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 74.6667 16.3336)" fill="white" />
-                                <circle cx="103" cy="60.0003" r="1.66667" transform="rotate(-90 103 60.0003)"
-                                    fill="white" />
-                                <circle cx="103" cy="16.3336" r="1.66667" transform="rotate(-90 103 16.3336)"
-                                    fill="white" />
-                                <circle cx="132" cy="60.0003" r="1.66667" transform="rotate(-90 132 60.0003)"
-                                    fill="white" />
-                                <circle cx="132" cy="16.3336" r="1.66667" transform="rotate(-90 132 16.3336)"
-                                    fill="white" />
-                                <circle cx="1.66667" cy="45.3336" r="1.66667"
-                                    transform="rotate(-90 1.66667 45.3336)" fill="white" />
-                                <circle cx="1.66667" cy="1.66683" r="1.66667"
-                                    transform="rotate(-90 1.66667 1.66683)" fill="white" />
-                                <circle cx="16.3333" cy="45.3336" r="1.66667"
-                                    transform="rotate(-90 16.3333 45.3336)" fill="white" />
-                                <circle cx="16.3333" cy="1.66683" r="1.66667"
-                                    transform="rotate(-90 16.3333 1.66683)" fill="white" />
-                                <circle cx="31" cy="45.3336" r="1.66667" transform="rotate(-90 31 45.3336)"
-                                    fill="white" />
-                                <circle cx="31" cy="1.66683" r="1.66667" transform="rotate(-90 31 1.66683)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="45.3336" r="1.66667"
-                                    transform="rotate(-90 45.6667 45.3336)" fill="white" />
-                                <circle cx="45.6667" cy="1.66683" r="1.66667"
-                                    transform="rotate(-90 45.6667 1.66683)" fill="white" />
-                                <circle cx="60.3333" cy="45.3338" r="1.66667"
-                                    transform="rotate(-90 60.3333 45.3338)" fill="white" />
-                                <circle cx="60.3333" cy="1.66707" r="1.66667"
-                                    transform="rotate(-90 60.3333 1.66707)" fill="white" />
-                                <circle cx="88.6667" cy="45.3338" r="1.66667"
-                                    transform="rotate(-90 88.6667 45.3338)" fill="white" />
-                                <circle cx="88.6667" cy="1.66707" r="1.66667"
-                                    transform="rotate(-90 88.6667 1.66707)" fill="white" />
-                                <circle cx="117.667" cy="45.3338" r="1.66667"
-                                    transform="rotate(-90 117.667 45.3338)" fill="white" />
-                                <circle cx="117.667" cy="1.66707" r="1.66667"
-                                    transform="rotate(-90 117.667 1.66707)" fill="white" />
-                                <circle cx="74.6667" cy="45.3338" r="1.66667"
-                                    transform="rotate(-90 74.6667 45.3338)" fill="white" />
-                                <circle cx="74.6667" cy="1.66707" r="1.66667"
-                                    transform="rotate(-90 74.6667 1.66707)" fill="white" />
-                                <circle cx="103" cy="45.3338" r="1.66667" transform="rotate(-90 103 45.3338)"
-                                    fill="white" />
-                                <circle cx="103" cy="1.66707" r="1.66667" transform="rotate(-90 103 1.66707)"
-                                    fill="white" />
-                                <circle cx="132" cy="45.3338" r="1.66667" transform="rotate(-90 132 45.3338)"
-                                    fill="white" />
-                                <circle cx="132" cy="1.66707" r="1.66667" transform="rotate(-90 132 1.66707)"
-                                    fill="white" />
-                            </svg>
-                        </div>
-                        <div class="absolute -right-6 -top-6 z-[-1]">
-                            <svg width="134" height="106" viewBox="0 0 134 106" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="1.66667" cy="104" r="1.66667" transform="rotate(-90 1.66667 104)"
-                                    fill="white" />
-                                <circle cx="16.3333" cy="104" r="1.66667" transform="rotate(-90 16.3333 104)"
-                                    fill="white" />
-                                <circle cx="31" cy="104" r="1.66667" transform="rotate(-90 31 104)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="104" r="1.66667" transform="rotate(-90 45.6667 104)"
-                                    fill="white" />
-                                <circle cx="60.3333" cy="104" r="1.66667" transform="rotate(-90 60.3333 104)"
-                                    fill="white" />
-                                <circle cx="88.6667" cy="104" r="1.66667" transform="rotate(-90 88.6667 104)"
-                                    fill="white" />
-                                <circle cx="117.667" cy="104" r="1.66667" transform="rotate(-90 117.667 104)"
-                                    fill="white" />
-                                <circle cx="74.6667" cy="104" r="1.66667" transform="rotate(-90 74.6667 104)"
-                                    fill="white" />
-                                <circle cx="103" cy="104" r="1.66667" transform="rotate(-90 103 104)"
-                                    fill="white" />
-                                <circle cx="132" cy="104" r="1.66667" transform="rotate(-90 132 104)"
-                                    fill="white" />
-                                <circle cx="1.66667" cy="89.3333" r="1.66667"
-                                    transform="rotate(-90 1.66667 89.3333)" fill="white" />
-                                <circle cx="16.3333" cy="89.3333" r="1.66667"
-                                    transform="rotate(-90 16.3333 89.3333)" fill="white" />
-                                <circle cx="31" cy="89.3333" r="1.66667" transform="rotate(-90 31 89.3333)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="89.3333" r="1.66667"
-                                    transform="rotate(-90 45.6667 89.3333)" fill="white" />
-                                <circle cx="60.3333" cy="89.3338" r="1.66667"
-                                    transform="rotate(-90 60.3333 89.3338)" fill="white" />
-                                <circle cx="88.6667" cy="89.3338" r="1.66667"
-                                    transform="rotate(-90 88.6667 89.3338)" fill="white" />
-                                <circle cx="117.667" cy="89.3338" r="1.66667"
-                                    transform="rotate(-90 117.667 89.3338)" fill="white" />
-                                <circle cx="74.6667" cy="89.3338" r="1.66667"
-                                    transform="rotate(-90 74.6667 89.3338)" fill="white" />
-                                <circle cx="103" cy="89.3338" r="1.66667" transform="rotate(-90 103 89.3338)"
-                                    fill="white" />
-                                <circle cx="132" cy="89.3338" r="1.66667" transform="rotate(-90 132 89.3338)"
-                                    fill="white" />
-                                <circle cx="1.66667" cy="74.6673" r="1.66667"
-                                    transform="rotate(-90 1.66667 74.6673)" fill="white" />
-                                <circle cx="1.66667" cy="31.0003" r="1.66667"
-                                    transform="rotate(-90 1.66667 31.0003)" fill="white" />
-                                <circle cx="16.3333" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 16.3333 74.6668)" fill="white" />
-                                <circle cx="16.3333" cy="31.0003" r="1.66667"
-                                    transform="rotate(-90 16.3333 31.0003)" fill="white" />
-                                <circle cx="31" cy="74.6668" r="1.66667" transform="rotate(-90 31 74.6668)"
-                                    fill="white" />
-                                <circle cx="31" cy="31.0003" r="1.66667" transform="rotate(-90 31 31.0003)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 45.6667 74.6668)" fill="white" />
-                                <circle cx="45.6667" cy="31.0003" r="1.66667"
-                                    transform="rotate(-90 45.6667 31.0003)" fill="white" />
-                                <circle cx="60.3333" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 60.3333 74.6668)" fill="white" />
-                                <circle cx="60.3333" cy="31.0001" r="1.66667"
-                                    transform="rotate(-90 60.3333 31.0001)" fill="white" />
-                                <circle cx="88.6667" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 88.6667 74.6668)" fill="white" />
-                                <circle cx="88.6667" cy="31.0001" r="1.66667"
-                                    transform="rotate(-90 88.6667 31.0001)" fill="white" />
-                                <circle cx="117.667" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 117.667 74.6668)" fill="white" />
-                                <circle cx="117.667" cy="31.0001" r="1.66667"
-                                    transform="rotate(-90 117.667 31.0001)" fill="white" />
-                                <circle cx="74.6667" cy="74.6668" r="1.66667"
-                                    transform="rotate(-90 74.6667 74.6668)" fill="white" />
-                                <circle cx="74.6667" cy="31.0001" r="1.66667"
-                                    transform="rotate(-90 74.6667 31.0001)" fill="white" />
-                                <circle cx="103" cy="74.6668" r="1.66667" transform="rotate(-90 103 74.6668)"
-                                    fill="white" />
-                                <circle cx="103" cy="31.0001" r="1.66667" transform="rotate(-90 103 31.0001)"
-                                    fill="white" />
-                                <circle cx="132" cy="74.6668" r="1.66667" transform="rotate(-90 132 74.6668)"
-                                    fill="white" />
-                                <circle cx="132" cy="31.0001" r="1.66667" transform="rotate(-90 132 31.0001)"
-                                    fill="white" />
-                                <circle cx="1.66667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 1.66667 60.0003)" fill="white" />
-                                <circle cx="1.66667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 1.66667 16.3336)" fill="white" />
-                                <circle cx="16.3333" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 16.3333 60.0003)" fill="white" />
-                                <circle cx="16.3333" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 16.3333 16.3336)" fill="white" />
-                                <circle cx="31" cy="60.0003" r="1.66667" transform="rotate(-90 31 60.0003)"
-                                    fill="white" />
-                                <circle cx="31" cy="16.3336" r="1.66667" transform="rotate(-90 31 16.3336)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 45.6667 60.0003)" fill="white" />
-                                <circle cx="45.6667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 45.6667 16.3336)" fill="white" />
-                                <circle cx="60.3333" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 60.3333 60.0003)" fill="white" />
-                                <circle cx="60.3333" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 60.3333 16.3336)" fill="white" />
-                                <circle cx="88.6667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 88.6667 60.0003)" fill="white" />
-                                <circle cx="88.6667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 88.6667 16.3336)" fill="white" />
-                                <circle cx="117.667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 117.667 60.0003)" fill="white" />
-                                <circle cx="117.667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 117.667 16.3336)" fill="white" />
-                                <circle cx="74.6667" cy="60.0003" r="1.66667"
-                                    transform="rotate(-90 74.6667 60.0003)" fill="white" />
-                                <circle cx="74.6667" cy="16.3336" r="1.66667"
-                                    transform="rotate(-90 74.6667 16.3336)" fill="white" />
-                                <circle cx="103" cy="60.0003" r="1.66667" transform="rotate(-90 103 60.0003)"
-                                    fill="white" />
-                                <circle cx="103" cy="16.3336" r="1.66667" transform="rotate(-90 103 16.3336)"
-                                    fill="white" />
-                                <circle cx="132" cy="60.0003" r="1.66667" transform="rotate(-90 132 60.0003)"
-                                    fill="white" />
-                                <circle cx="132" cy="16.3336" r="1.66667" transform="rotate(-90 132 16.3336)"
-                                    fill="white" />
-                                <circle cx="1.66667" cy="45.3336" r="1.66667"
-                                    transform="rotate(-90 1.66667 45.3336)" fill="white" />
-                                <circle cx="1.66667" cy="1.66683" r="1.66667"
-                                    transform="rotate(-90 1.66667 1.66683)" fill="white" />
-                                <circle cx="16.3333" cy="45.3336" r="1.66667"
-                                    transform="rotate(-90 16.3333 45.3336)" fill="white" />
-                                <circle cx="16.3333" cy="1.66683" r="1.66667"
-                                    transform="rotate(-90 16.3333 1.66683)" fill="white" />
-                                <circle cx="31" cy="45.3336" r="1.66667" transform="rotate(-90 31 45.3336)"
-                                    fill="white" />
-                                <circle cx="31" cy="1.66683" r="1.66667" transform="rotate(-90 31 1.66683)"
-                                    fill="white" />
-                                <circle cx="45.6667" cy="45.3336" r="1.66667"
-                                    transform="rotate(-90 45.6667 45.3336)" fill="white" />
-                                <circle cx="45.6667" cy="1.66683" r="1.66667"
-                                    transform="rotate(-90 45.6667 1.66683)" fill="white" />
-                                <circle cx="60.3333" cy="45.3338" r="1.66667"
-                                    transform="rotate(-90 60.3333 45.3338)" fill="white" />
-                                <circle cx="60.3333" cy="1.66707" r="1.66667"
-                                    transform="rotate(-90 60.3333 1.66707)" fill="white" />
-                                <circle cx="88.6667" cy="45.3338" r="1.66667"
-                                    transform="rotate(-90 88.6667 45.3338)" fill="white" />
-                                <circle cx="88.6667" cy="1.66707" r="1.66667"
-                                    transform="rotate(-90 88.6667 1.66707)" fill="white" />
-                                <circle cx="117.667" cy="45.3338" r="1.66667"
-                                    transform="rotate(-90 117.667 45.3338)" fill="white" />
-                                <circle cx="117.667" cy="1.66707" r="1.66667"
-                                    transform="rotate(-90 117.667 1.66707)" fill="white" />
-                                <circle cx="74.6667" cy="45.3338" r="1.66667"
-                                    transform="rotate(-90 74.6667 45.3338)" fill="white" />
-                                <circle cx="74.6667" cy="1.66707" r="1.66667"
-                                    transform="rotate(-90 74.6667 1.66707)" fill="white" />
-                                <circle cx="103" cy="45.3338" r="1.66667" transform="rotate(-90 103 45.3338)"
-                                    fill="white" />
-                                <circle cx="103" cy="1.66707" r="1.66667" transform="rotate(-90 103 1.66707)"
-                                    fill="white" />
-                                <circle cx="132" cy="45.3338" r="1.66667" transform="rotate(-90 132 45.3338)"
-                                    fill="white" />
-                                <circle cx="132" cy="1.66707" r="1.66667" transform="rotate(-90 132 1.66707)"
-                                    fill="white" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- text hero --}}
-                <div class="w-1/2 px-4 jusify-center items-center">
+    <div id="home" class="relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]">
+        <div class="container justify-content-center">
+            <div class="-mx-4 flex flex-wrap items-center">
+                <div class="w-full px-4">
                     <div class="hero-content wow fadeInUp mx-auto max-w-[780px] text-center" data-wow-delay=".2s">
                         <h1
-                            class="mb-6 text-3xl font-bold leading-snug text-hero sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
-                            Bersinergi Menuju Orbit Prestasi
-                        </h1>
-
-                        <h1 id="typing-text"
                             class="mb-6 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+                            Open-Source Web Template for SaaS, Startup, Apps, and More
                         </h1>
-
+                        <p
+                            class="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
+                            Multidisciplinary Web Template Built with Your Favourite
+                            Technology - HTML Bootstrap, Tailwind and React NextJS.
+                        </p>
                         <ul class="mb-10 flex flex-wrap items-center justify-center gap-5">
                             <li>
                                 <a href="https://links.tailgrids.com/play-download"
@@ -688,8 +368,55 @@
                 </div>
             </div>
         </div>
+
+        <div class="w-full">
+            <div class="wow fadeInUp relative z-10 mx-auto" data-wow-delay=".25s">
+                <div class="mt-16">
+                    <!--Waves Container-->
+                    <div>
+                        <svg class="waves" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28"
+                            preserveAspectRatio="none" shape-rendering="auto">
+                            <defs>
+                                <path id="gentle-wave"
+                                    d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                            </defs>
+                            <g class="parallax">
+                                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                            </g>
+                        </svg>
+                    </div>
+                    <!--Waves end-->
+                </div>
+            </div>
+        </div>
     </div>
     <!-- ====== Hero Section End -->
+
+
+    <div class="content flex">
+        {{-- text hero --}}
+        <div class="w-full px-4 jusify-center items-center">
+            <div class="hero-content wow fadeInUp mx-auto max-w-[780px] text-center" data-wow-delay=".2s">
+                <h1
+                    class="mt-12 text-3xl font-bold leading-snug text-hero sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+                    Bersinergi Menuju Orbit Prestasi
+                </h1>
+                <div class="max-w-full">
+
+                    <h1 class="ml4">
+                        <span class="letters letters-1">#OneTeamOneEnergy</span>
+                        <span class="letters letters-2">#VisionReality</span>
+                        <span class="letters letters-3">#VisionSustainability</span>
+                        <span class="letters letters-4">#ResiliensiBPR</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ====== Features Section Start -->
     <section class="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
@@ -862,7 +589,8 @@
                                 Tentang Kami
                             </h2>
                             <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
-                                <span class="">BPR Putera Dana</span> berdiri sejak tahun 2003 dan saat ini sudah
+                                <span class="">BPR Putera Dana</span> berdiri sejak tahun 2003 dan saat ini
+                                sudah
                                 menginjak usia kurang lebih
                                 20 tahun. Bergerak dalam bisnis jasa keuangan dan melakukan fungsi intemediasi keuangan.
                                 <br>
@@ -942,8 +670,8 @@
                                             </svg>
                                         </span>
                                         <span class="absolute bottom-0 right-0 -z-10">
-                                            <svg width="175" height="104" viewBox="0 0 175 104"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="175" height="104" viewBox="0 0 175 104" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
                                                 <rect opacity="0.1" x="175.011" y="108.611" width="101.246"
                                                     height="148.179" transform="rotate(137.136 175.011 108.611)"
                                                     fill="url(#paint0_linear_1416_216)" />
@@ -952,8 +680,7 @@
                                                         y1="108.611" x2="225.634" y2="256.79"
                                                         gradientUnits="userSpaceOnUse">
                                                         <stop stop-color="white" />
-                                                        <stop offset="1" stop-color="white"
-                                                            stop-opacity="0" />
+                                                        <stop offset="1" stop-color="white" stop-opacity="0" />
                                                     </linearGradient>
                                                 </defs>
                                             </svg>
@@ -970,7 +697,7 @@
     <!-- ====== About Section End -->
 
     <!-- ====== Testimonial Section Start -->
-    <section id="testimonials" class="overflow-hidden bg-gray-1 py-20 dark:bg-dark-2 md:py-[120px]">
+    <section id="produk" class="overflow-hidden bg-gray-1 py-20 dark:bg-dark-2 md:py-[120px]">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap justify-center">
                 <div class="w-full px-4">
@@ -993,7 +720,7 @@
 
             <div class="-m-5">
                 <div class="swiper testimonial-carousel common-carousel p-5">
-                    <div class="swiper-wrapper">
+                    <div class="wow fadeInUp swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="rounded-xl bg-white shadow-testimonial dark:bg-dark">
                                 <img src="{{ asset('assets/images/poster/DEPOSITO-POSTER.JPG') }}" alt="">
@@ -1079,7 +806,7 @@
                 </div>
             </div>
             <div class="-mx-4 flex flex-wrap justify-center">
-                <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4 wow fadeInUp " data-wow-delay=".1s">
                     <div
                         class="group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none">
                         <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
@@ -1241,7 +968,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4 wow fadeInUp " data-wow-delay=".1s">
                     <div
                         class="group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none">
                         <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
@@ -1349,7 +1076,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4 wow fadeInUp " data-wow-delay=".1s">
                     <div
                         class="group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none">
                         <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
@@ -1457,7 +1184,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4 wow fadeInUp " data-wow-delay=".1s">
                     <div
                         class="group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none">
                         <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
@@ -1571,21 +1298,21 @@
     <!-- ====== Team Section End -->
 
     <!-- ====== Blog Section Start -->
-    <section class="bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
+    <section id="blog" class="bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap justify-center">
                 <div class="w-full px-4">
-                    <div class="mx-auto mb-[60px] max-w-[485px] text-center">
+                    <div class="mx-auto mb-[60px] max-w-[700px] text-center">
                         <span class="mb-2 block text-lg font-semibold text-primary">
-                            Our Blogs
+                            Berita Perusahaan
                         </span>
                         <h2
                             class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
-                            Our Recent News
+                            Kabar Terbaru dari Kami
                         </h2>
                         <p class="text-base text-body-color dark:text-dark-6">
-                            There are many variations of passages of Lorem Ipsum available
-                            but the majority have suffered alteration in some form.
+                            Tetap terhubung dengan berita dan pembaruan terkini dari perusahaan kami. Dapatkan informasi
+                            terbaru mengenai inovasi, acara, dan pencapaian penting kami.
                         </p>
                     </div>
                 </div>
@@ -1679,17 +1406,17 @@
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap justify-center">
                 <div class="w-full px-4">
-                    <div class="mx-auto mb-[60px] max-w-[485px] text-center">
+                    <div class="mx-auto mb-[60px] max-w-[700px] text-center">
                         <span class="mb-2 block text-lg font-semibold text-primary">
-                            Testimonials
+                            Penghargaan dan Prestasi
                         </span>
                         <h2
                             class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
-                            What our Clients Say
+                            Capaian yang Membanggakan
                         </h2>
                         <p class="text-base text-body-color dark:text-dark-6">
-                            There are many variations of passages of Lorem Ipsum available
-                            but the majority have suffered alteration in some form.
+                            Kami bangga atas penghargaan dan prestasi yang telah diraih sebagai pengakuan atas komitmen
+                            kami terhadap keunggulan layanan dan inovasi.
                         </p>
                     </div>
                 </div>
@@ -1699,178 +1426,36 @@
                 <div class="swiper testimonial-carousel common-carousel p-5">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
+                            <div class="rounded-xl shadow-testimonial dark:bg-dark justify-center">
+                                <img src="{{ asset('assets/images/blog/blog-01.jpg') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rounded-xl bg-white shadow-testimonial dark:bg-dark justify-center">
+                                <img src="{{ asset('assets/images/blog/blog-01.jpg') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rounded-xl bg-white shadow-testimonial dark:bg-dark justify-center">
+                                <img src="{{ asset('assets/images/blog/blog-01.jpg') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rounded-xl bg-white shadow-testimonial dark:bg-dark justify-center">
+                                <img src="{{ asset('assets/images/blog/blog-01.jpg') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rounded-xl bg-white shadow-testimonial dark:bg-dark justify-center">
+                                <img src="{{ asset('assets/images/blog/blog-01.jpg') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
                             <div class="rounded-xl bg-white shadow-testimonial dark:bg-dark justify-center">
                                 <img src="{{ asset('assets/images/blog/blog-01.jpg') }}" alt="">
                             </div>
                         </div>
 
-                        <div class="swiper-slide">
-                            <div
-                                class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                                <div class="mb-[18px] flex items-center gap-[2px]">
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                </div>
-
-                                <p class="mb-6 text-base text-body-color dark:text-dark-6">
-                                    “Our members are so impressed. It's intuitive. It's clean.
-                                    It's distraction free. If you're building a community.’’
-                                </p>
-
-                                <a href="#" class="flex items-center gap-4">
-                                    <div class="h-[50px] w-[50px] overflow-hidden rounded-full">
-                                        <img src="./assets/images/testimonials/author-02.jpg" alt="author"
-                                            class="h-[50px] w-[50px] overflow-hidden rounded-full" />
-                                    </div>
-
-                                    <div>
-                                        <h3 class="text-sm font-semibold text-dark dark:text-white">
-                                            Musharof Chowdhury
-                                        </h3>
-                                        <p class="text-xs text-body-secondary">
-                                            Founder @ Ayro UI
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div
-                                class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                                <div class="mb-[18px] flex items-center gap-[2px]">
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                </div>
-
-                                <p class="mb-6 text-base text-body-color dark:text-dark-6">
-                                    “Our members are so impressed. It's intuitive. It's clean.
-                                    It's distraction free. If you're building a community.’’
-                                </p>
-
-                                <a href="#" class="flex items-center gap-4">
-                                    <div class="h-[50px] w-[50px] overflow-hidden rounded-full">
-                                        <img src="./assets/images/testimonials/author-03.jpg" alt="author"
-                                            class="h-[50px] w-[50px] overflow-hidden rounded-full" />
-                                    </div>
-
-                                    <div>
-                                        <h3 class="text-sm font-semibold text-dark dark:text-white">
-                                            William Smith
-                                        </h3>
-                                        <p class="text-xs text-body-secondary">
-                                            Founder @ Trorex
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div
-                                class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                                <div class="mb-[18px] flex items-center gap-[2px]">
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                </div>
-
-                                <p class="mb-6 text-base text-body-color dark:text-dark-6">
-                                    “Our members are so impressed. It's intuitive. It's clean.
-                                    It's distraction free. If you're building a community.’’
-                                </p>
-
-                                <a href="#" class="flex items-center gap-4">
-                                    <div class="h-[50px] w-[50px] overflow-hidden rounded-full">
-                                        <img src="./assets/images/testimonials/author-01.jpg" alt="author"
-                                            class="h-[50px] w-[50px] overflow-hidden rounded-full" />
-                                    </div>
-
-                                    <div>
-                                        <h3 class="text-sm font-semibold text-dark dark:text-white">
-                                            Sabo Masties
-                                        </h3>
-                                        <p class="text-xs text-body-secondary">Founder @ Rolex</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div
-                                class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                                <div class="mb-[18px] flex items-center gap-[2px]">
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                </div>
-
-                                <p class="mb-6 text-base text-body-color dark:text-dark-6">
-                                    “Our members are so impressed. It's intuitive. It's clean.
-                                    It's distraction free. If you're building a community.’’
-                                </p>
-
-                                <a href="#" class="flex items-center gap-4">
-                                    <div class="h-[50px] w-[50px] overflow-hidden rounded-full">
-                                        <img src="./assets/images/testimonials/author-02.jpg" alt="author"
-                                            class="h-[50px] w-[50px] overflow-hidden rounded-full" />
-                                    </div>
-
-                                    <div>
-                                        <h3 class="text-sm font-semibold text-dark dark:text-white">
-                                            Musharof Chowdhury
-                                        </h3>
-                                        <p class="text-xs text-body-secondary">
-                                            Founder @ Ayro UI
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div
-                                class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                                <div class="mb-[18px] flex items-center gap-[2px]">
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                    <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                                </div>
-
-                                <p class="mb-6 text-base text-body-color dark:text-dark-6">
-                                    “Our members are so impressed. It's intuitive. It's clean.
-                                    It's distraction free. If you're building a community.’’
-                                </p>
-
-                                <a href="#" class="flex items-center gap-4">
-                                    <div class="h-[50px] w-[50px] overflow-hidden rounded-full">
-                                        <img src="./assets/images/testimonials/author-03.jpg" alt="author"
-                                            class="h-[50px] w-[50px] overflow-hidden rounded-full" />
-                                    </div>
-
-                                    <div>
-                                        <h3 class="text-sm font-semibold text-dark dark:text-white">
-                                            William Smith
-                                        </h3>
-                                        <p class="text-xs text-body-secondary">
-                                            Founder @ Trorex
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="mt-[60px] flex items-center justify-center gap-1">
@@ -1897,25 +1482,26 @@
     <!-- ====== Penghargaan Section End -->
 
     <!-- ====== CTA Section Start -->
-    <section class="relative z-10 overflow-hidden bg-primary py-20 lg:py-[115px]">
+    <section class="relative z-10 overflow-hidden bg-primary py-20 lg:py-[115px] border-cta">
         <div class="container mx-auto">
             <div class="relative overflow-hidden">
                 <div class="-mx-4 flex flex-wrap items-stretch">
                     <div class="w-full px-4">
                         <div class="mx-auto max-w-[570px] text-center">
                             <h2 class="mb-2.5 text-3xl font-bold text-white md:text-[38px] md:leading-[1.44]">
-                                <span>What Are You Looking For?</span>
+                                <span>Apa yang Anda Cari?</span>
+                                <br>
                                 <span class="text-3xl font-normal md:text-[40px]">
-                                    Get Started Now
+                                    Mulai Sekarang
                                 </span>
                             </h2>
                             <p class="mx-auto mb-6 max-w-[515px] text-base leading-[1.5] text-white">
-                                There are many variations of passages of Lorem Ipsum but the
-                                majority have suffered in some form.
+                                Temukan solusi terbaik untuk kebutuhan Anda bersama kami. Mari
+                                wujudkan tujuan Anda dengan layanan yang dapat diandalkan.
                             </p>
-                            <a href="javascript:void(0)"
+                            <a href="https://api.whatsapp.com/send?phone=6282331113332"
                                 class="inline-block rounded-md border border-transparent bg-secondary px-7 py-3 text-base font-medium text-white transition hover:bg-[#0BB489]">
-                                Start using Play
+                                Konsultasi Sekarang
                             </a>
                         </div>
                     </div>
@@ -1954,125 +1540,59 @@
         <div class="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2">
         </div>
         <div class="container px-4">
-            <div class="-mx-4 flex flex-wrap items-center">
-                <div class="w-full px-4 lg:w-7/12 xl:w-8/12">
+            <div class="-mx-4 flex flex-wrap lg:flex-nowrap items-center">
+                <div class="w-full lg:w-1/2 px-4">
                     <div class="ud-contact-content-wrapper">
-                        {{-- <div class="ud-contact-title mb-12 lg:mb-[150px]">
-                            <span class="mb-6 block text-base font-medium text-dark dark:text-white">
-                                CONTACT US
-                            </span>
-                            <h2
-                                class="max-w-[260px] text-[35px] font-semibold leading-[1.14] text-dark dark:text-white">
-                                Let's talk about your problem.
-                            </h2>
-                        </div> --}}
-                        <div class="mb-12 flex flex-wrap justify-between lg:mb-0">
-                            <div class="mb-8 flex w-[330px] max-w-full">
-                                <div class="mr-6 text-[32px] text-primary">
-                                    <svg width="29" height="35" viewBox="0 0 29 35" class="fill-current">
-                                        <path
-                                            d="M14.5 0.710938C6.89844 0.710938 0.664062 6.72656 0.664062 14.0547C0.664062 19.9062 9.03125 29.5859 12.6406 33.5234C13.1328 34.0703 13.7891 34.3437 14.5 34.3437C15.2109 34.3437 15.8672 34.0703 16.3594 33.5234C19.9688 29.6406 28.3359 19.9062 28.3359 14.0547C28.3359 6.67188 22.1016 0.710938 14.5 0.710938ZM14.9375 32.2109C14.6641 32.4844 14.2812 32.4844 14.0625 32.2109C11.3828 29.3125 2.57812 19.3594 2.57812 14.0547C2.57812 7.71094 7.9375 2.625 14.5 2.625C21.0625 2.625 26.4219 7.76562 26.4219 14.0547C26.4219 19.3594 17.6172 29.2578 14.9375 32.2109Z" />
-                                        <path
-                                            d="M14.5 8.58594C11.2734 8.58594 8.59375 11.2109 8.59375 14.4922C8.59375 17.7188 11.2187 20.3984 14.5 20.3984C17.7812 20.3984 20.4062 17.7734 20.4062 14.4922C20.4062 11.2109 17.7266 8.58594 14.5 8.58594ZM14.5 18.4297C12.3125 18.4297 10.5078 16.625 10.5078 14.4375C10.5078 12.25 12.3125 10.4453 14.5 10.4453C16.6875 10.4453 18.4922 12.25 18.4922 14.4375C18.4922 16.625 16.6875 18.4297 14.5 18.4297Z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h5 class=" text-lg font-semibold text-dark dark:text-white">
-                                        Kantor Pusat
-                                    </h5>
-                                    <p class="mb-[18px] text-base text-body-color dark:text-dark-6">
-                                        Jl. Raya Soekarno Hatta No.66E Mojolangu Lowokwaru Malang.
-                                    </p>
-
-                                    <h5 class="text-lg font-semibold text-dark dark:text-white">
-                                        Kantor Cabang
-                                    </h5>
-                                    <p class="mb-[18px] text-base text-body-color dark:text-dark-6">
-                                        Perum CBD Taman Dayu Blok F No.6 Karangjati Pandaan Pasuruan.
-                                    </p>
-
-                                    <h5 class="text-lg font-semibold text-dark dark:text-white">
-                                        Kantor Kas Tlogomas
-                                    </h5>
-                                    <p class="mb-[18px] text-base text-body-color dark:text-dark-6">
-                                        Jl. Raya Tlogomas Kav 37 A Malang.
-                                    </p>
-
-                                    <h5 class="text-lg font-semibold text-dark dark:text-white">
-                                        Kantor Kas Pakisaji
-                                    </h5>
-                                    <p class="mb-[18px] text-base text-body-color dark:text-dark-6">
-                                        Jl. Raya Pakisaji Karangpandan Kab.Malang.
-                                    </p>
-
-                                </div>
+                        <div class="mb-8 flex max-w-full">
+                            <div class="mr-6 text-[32px] text-primary">
+                                <svg width="29" height="35" viewBox="0 0 29 35" class="fill-current">
+                                    <path
+                                        d="M14.5 0.710938C6.89844 0.710938 0.664062 6.72656 0.664062 14.0547C0.664062 19.9062 9.03125 29.5859 12.6406 33.5234C13.1328 34.0703 13.7891 34.3437 14.5 34.3437C15.2109 34.3437 15.8672 34.0703 16.3594 33.5234C19.9688 29.6406 28.3359 19.9062 28.3359 14.0547C28.3359 6.67188 22.1016 0.710938 14.5 0.710938ZM14.9375 32.2109C14.6641 32.4844 14.2812 32.4844 14.0625 32.2109C11.3828 29.3125 2.57812 19.3594 2.57812 14.0547C2.57812 7.71094 7.9375 2.625 14.5 2.625C21.0625 2.625 26.4219 7.76562 26.4219 14.0547C26.4219 19.3594 17.6172 29.2578 14.9375 32.2109Z" />
+                                    <path
+                                        d="M14.5 8.58594C11.2734 8.58594 8.59375 11.2109 8.59375 14.4922C8.59375 17.7188 11.2187 20.3984 14.5 20.3984C17.7812 20.3984 20.4062 17.7734 20.4062 14.4922C20.4062 11.2109 17.7266 8.58594 14.5 8.58594ZM14.5 18.4297C12.3125 18.4297 10.5078 16.625 10.5078 14.4375C10.5078 12.25 12.3125 10.4453 14.5 10.4453C16.6875 10.4453 18.4922 12.25 18.4922 14.4375C18.4922 16.625 16.6875 18.4297 14.5 18.4297Z" />
+                                </svg>
                             </div>
-                            <div class="mb-8 flex w-[330px] max-w-full">
-                                <div class="mr-6 text-[32px] text-primary">
-                                    <svg width="34" height="25" viewBox="0 0 34 25" class="fill-current">
-                                        <path
-                                            d="M30.5156 0.960938H3.17188C1.42188 0.960938 0 2.38281 0 4.13281V20.9219C0 22.6719 1.42188 24.0938 3.17188 24.0938H30.5156C32.2656 24.0938 33.6875 22.6719 33.6875 20.9219V4.13281C33.6875 2.38281 32.2656 0.960938 30.5156 0.960938ZM30.5156 2.875C30.7891 2.875 31.0078 2.92969 31.2266 3.09375L17.6094 11.3516C17.1172 11.625 16.5703 11.625 16.0781 11.3516L2.46094 3.09375C2.67969 2.98438 2.89844 2.875 3.17188 2.875H30.5156ZM30.5156 22.125H3.17188C2.51562 22.125 1.91406 21.5781 1.91406 20.8672V5.00781L15.0391 12.9922C15.5859 13.3203 16.1875 13.4844 16.7891 13.4844C17.3906 13.4844 17.9922 13.3203 18.5391 12.9922L31.6641 5.00781V20.8672C31.7734 21.5781 31.1719 22.125 30.5156 22.125Z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h5 class="mb-[18px] text-lg font-semibold text-dark dark:text-white">
-                                        How Can We Help?
-                                    </h5>
-                                    <p class="text-base text-body-color dark:text-dark-6">
-                                        info@yourdomain.com
-                                    </p>
-                                    <p class="mt-1 text-base text-body-color dark:text-dark-6">
-                                        contact@yourdomain.com
-                                    </p>
-                                </div>
+                            <div class="mr-18 max-w-[370px]">
+                                <h5 class="text-lg font-semibold text-dark dark:text-white">
+                                    Kantor Pusat
+                                </h5>
+                                <p class="mb-[18px] text-base text-body-color dark:text-dark-6">
+                                    Jl. Raya Soekarno Hatta No.66E Mojolangu Lowokwaru Malang.
+                                </p>
+
+                                <h5 class="text-lg font-semibold text-dark dark:text-white">
+                                    Kantor Cabang
+                                </h5>
+                                <p class="mb-[18px] text-base text-body-color dark:text-dark-6">
+                                    Perum CBD Taman Dayu Blok F No.6 Karangjati Pandaan Pasuruan.
+                                </p>
+
+                                <h5 class="text-lg font-semibold text-dark dark:text-white">
+                                    Kantor Kas Tlogomas
+                                </h5>
+                                <p class="mb-[18px] text-base text-body-color dark:text-dark-6">
+                                    Jl. Raya Tlogomas Kav 37 A Malang.
+                                </p>
+
+                                <h5 class="text-lg font-semibold text-dark dark:text-white">
+                                    Kantor Kas Pakisaji
+                                </h5>
+                                <p class="mb-[18px] text-base text-body-color dark:text-dark-6">
+                                    Jl. Raya Pakisaji Karangpandan Kab.Malang.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full px-4 lg:w-5/12 xl:w-4/12">
-                    <div class="wow fadeInUp rounded-lg bg-white px-8 py-10 shadow-testimonial dark:bg-dark-2 dark:shadow-none sm:px-10 sm:py-12 md:p-[60px] lg:p-10 lg:px-10 lg:py-12 2xl:p-[60px]"
-                        data-wow-delay=".2s
-              ">
-                        <h3
-                            class="mb-8 text-2xl font-semibold text-dark dark:text-white md:text-[28px] md:leading-[1.42]">
-                            Send us a Message
-                        </h3>
-                        <form>
-                            <div class="mb-[22px]">
-                                <label for="fullName"
-                                    class="mb-4 block text-sm text-body-color dark:text-dark-6">Full Name*</label>
-                                <input type="text" name="fullName" placeholder="Adam Gelius"
-                                    class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6" />
-                            </div>
-                            <div class="mb-[22px]">
-                                <label for="email"
-                                    class="mb-4 block text-sm text-body-color dark:text-dark-6">Email*</label>
-                                <input type="email" name="email" placeholder="example@yourmail.com"
-                                    class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6" />
-                            </div>
-                            <div class="mb-[22px]">
-                                <label for="phone"
-                                    class="mb-4 block text-sm text-body-color dark:text-dark-6">Phone*</label>
-                                <input type="text" name="phone" placeholder="+885 1254 5211 552"
-                                    class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6" />
-                            </div>
-                            <div class="mb-[30px]">
-                                <label for="message"
-                                    class="mb-4 block text-sm text-body-color dark:text-dark-6">Message*</label>
-                                <textarea name="message" rows="1" placeholder="type your message here"
-                                    class="w-full resize-none border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6"></textarea>
-                            </div>
-                            <div class="mb-0">
-                                <button type="submit"
-                                    class="inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-blue-dark">
-                                    Send
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="w-full lg:w-1/2 px-4 mt-6 lg:mt-0">
+                    <iframe class="w-full h-full md:h-[346px]"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.876168371482!2d112.62358113204938!3d-7.938026358957041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd629e135b4c315%3A0xf280b42bb01da57b!2sPT.%20BPR%20Putera%20Dana!5e0!3m2!1sen!2sus!4v1732067996431!5m2!1sen!2sus"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
+
     </section>
     <!-- ====== Contact End ====== -->
 
@@ -2490,15 +2010,12 @@
 
     <!-- ====== Made With Button Start -->
     <a target="_blank" rel="nofollow noopener"
-        class="fixed bottom-8 left-4 z-[999] inline-flex items-center gap-[10px] rounded-lg bg-white px-[14px] py-2 shadow-2 dark:bg-dark-2 sm:left-9"
+        class="fixed top-1/2 left-0 z-[999] items-center gap-[10px] rounded-pengaduan px-2 py-2"
         href="https://tailgrids.com/">
-        <span class="text-base font-medium text-dark-3 dark:text-dark-6">
-            Made with
-        </span>
-        <span class="block h-4 w-px bg-stroke dark:bg-dark-3"></span>
-        <span class="block w-full max-w-[88px]">
-            <img src="./assets/images/brands/tailgrids.svg" alt="tailgrids" class="dark:hidden" />
-            <img src="./assets/images/brands/tailgrids-white.svg" alt="tailgrids" class="hidden dark:block" />
+        <img class="img-pengaduan" src="{{ asset('assets/images/whatsapp.png') }}"
+            alt="layanan pengaduan bpr putera dana">
+        <span class="font-medium text-white text-pengaduan">
+            Pengaduan
         </span>
     </a>
     <!-- ====== Made With Button End -->
@@ -2507,41 +2024,74 @@
 
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script>
         // ==== for typing text
-        document.addEventListener('DOMContentLoaded', function() {
-            const words = ['OneTeamOneEnergy', 'VisionReality', 'VisionSustainability', 'ResiliensiBPR'];
-            let i = 0; // Index kata
-            let offset = 0; // Index karakter
-            let forwards = true; // Arah pengetikan
-            const speed = 150; // Kecepatan mengetik (ms)
-            const delay = 1000; // Waktu jeda sebelum hapus (ms)
-            const typingText = document.getElementById('typing-text');
+        var ml4 = {};
+        ml4.opacityIn = [0, 1];
+        ml4.scaleIn = [0.2, 1];
+        ml4.scaleOut = 1.2;
+        ml4.durationIn = 800;
+        ml4.durationOut = 600;
+        ml4.delay = 500;
 
-            const typeEffect = () => {
-                if (forwards) {
-                    if (offset < words[i].length) {
-                        offset++;
-                    } else {
-                        forwards = false;
-                        setTimeout(typeEffect, delay);
-                        return;
-                    }
-                } else {
-                    if (offset > 0) {
-                        offset--;
-                    } else {
-                        forwards = true;
-                        i = (i + 1) % words.length; // Pindah ke kata berikutnya
-                    }
-                }
-
-                typingText.textContent = words[i].substr(0, offset);
-                setTimeout(typeEffect, speed);
-            };
-
-            typeEffect();
-        });
+        anime.timeline({
+                loop: true
+            })
+            .add({
+                targets: '.ml4 .letters-1',
+                opacity: ml4.opacityIn,
+                scale: ml4.scaleIn,
+                duration: ml4.durationIn
+            }).add({
+                targets: '.ml4 .letters-1',
+                opacity: 0,
+                scale: ml4.scaleOut,
+                duration: ml4.durationOut,
+                easing: "easeInExpo",
+                delay: ml4.delay
+            }).add({
+                targets: '.ml4 .letters-2',
+                opacity: ml4.opacityIn,
+                scale: ml4.scaleIn,
+                duration: ml4.durationIn
+            }).add({
+                targets: '.ml4 .letters-2',
+                opacity: 0,
+                scale: ml4.scaleOut,
+                duration: ml4.durationOut,
+                easing: "easeInExpo",
+                delay: ml4.delay
+            }).add({
+                targets: '.ml4 .letters-3',
+                opacity: ml4.opacityIn,
+                scale: ml4.scaleIn,
+                duration: ml4.durationIn
+            }).add({
+                targets: '.ml4 .letters-3',
+                opacity: 0,
+                scale: ml4.scaleOut,
+                duration: ml4.durationOut,
+                easing: "easeInExpo",
+                delay: ml4.delay
+            }).add({
+                targets: '.ml4 .letters-4',
+                opacity: ml4.opacityIn,
+                scale: ml4.scaleIn,
+                duration: ml4.durationIn
+            }).add({
+                targets: '.ml4 .letters-4',
+                opacity: 0,
+                scale: ml4.scaleOut,
+                duration: ml4.durationOut,
+                easing: "easeInExpo",
+                delay: ml4.delay
+            }).add({
+                targets: '.ml4',
+                opacity: 0,
+                duration: 500,
+                delay: 500
+            });
 
         // ==== for menu scroll
         const pageLink = document.querySelectorAll(".ud-menu-scroll");
